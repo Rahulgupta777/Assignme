@@ -1,0 +1,335 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1e469730-98e5-41da-a3f2-1f0a9b7bede4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q.1 Explain with an example each when to use a for loop and a while loop."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3600e939-43dd-4a2a-b696-9bb50ffc48ca",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ans. A for loop is used when you want to repeat a task a fixed number of times, such as iterating over a list or range of numbers.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "56c99fcd-c8db-4e11-a2a3-5de0f3f71f49",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "l = [1,2,3,4,5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "ad1a2302-300b-4389-aa38-62bd557256f8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in l :\n",
+    "    print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f1a8e175-4242-40de-8f79-0b91703987ad",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "On the other hand, a while loop is useful when you want to repeat a certain operation until a specific \n",
+    "condition is met. It is particularly useful when the number of iterations is not known in advance. Here's an example:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "c5a0b1c4-693d-447c-b283-ce42e0f9bc77",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n",
+      "9\n",
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=1\n",
+    "while a<= 10 :\n",
+    "    print (a)\n",
+    "    a = a+1\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bbf8a67d-48ad-453f-a9b6-6a3d3fd0a6cf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q.2 Write a python program to print the sum and product of the first 10 natural numbers using for\n",
+    "and while loop."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "ab401f7d-7020-4217-9e40-71c0606fbecd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Using for loop:\n",
+      "Sum of first 10 natural numbers: 55\n",
+      "Product of first 10 natural numbers: 3628800\n"
+     ]
+    }
+   ],
+   "source": [
+    "n = 10\n",
+    "sum = 0\n",
+    "prod = 1\n",
+    "\n",
+    "for i in range(1, n+1):\n",
+    "    sum += i\n",
+    "    prod *= i\n",
+    "\n",
+    "print(\"Using for loop:\")\n",
+    "print(\"Sum of first 10 natural numbers:\", sum)\n",
+    "print(\"Product of first 10 natural numbers:\", prod)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "a93f9769-316f-4488-a514-329f5bde425b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Using while loop:\n",
+      "Sum of first 10 natural numbers: 55\n",
+      "Product of first 10 natural numbers: 3628800\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Using while loop to calculate sum and product of first 10 natural numbers\n",
+    "n = 10\n",
+    "sum = 0\n",
+    "prod = 1\n",
+    "i = 1\n",
+    "\n",
+    "while i <= n:\n",
+    "    sum += i\n",
+    "    prod *= i\n",
+    "    i += 1\n",
+    "\n",
+    "print(\"Using while loop:\")\n",
+    "print(\"Sum of first 10 natural numbers:\", sum)\n",
+    "print(\"Product of first 10 natural numbers:\", prod)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2ad9e053-c54d-423d-b3bd-7380b0d1ade6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q3. Create a python program to compute the electricity bill for a household.\n",
+    "The per-unit charges in rupees are as follows: For the first 100 units, the user will be charged Rs. 4.5 per\n",
+    "unit, for the next 100 units, the user will be charged Rs. 6 per unit, and for the next 100 units, the user will\n",
+    "be charged Rs. 10 per unit, After 300 units and above the user will be charged Rs. 20 per unit.\n",
+    "You are required to take the units of electricity consumed in a month from the user as input.\n",
+    "Your program must pass this test case: when the unit of electricity consumed by the user in a month is\n",
+    "310, the total electricity bill should be 2250."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a48a3c73-3f93-4e1f-8dec-974e892b2696",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# take input from user\n",
+    "units = int(input(\"Enter the number of units consumed: \"))\n",
+    "\n",
+    "# calculate the bill amount\n",
+    "if units <= 100:\n",
+    "    bill_amount = units * 4.5\n",
+    "elif units <= 200:\n",
+    "    bill_amount = 100 * 4.5 + (units - 100) * 6\n",
+    "elif units <= 300:\n",
+    "    bill_amount = 100 * 4.5 + 100 * 6 + (units - 200) * 10\n",
+    "else:\n",
+    "    bill_amount = 100 * 4.5 + 100 * 6 + 100 * 10 + (units - 300) * 20\n",
+    "\n",
+    "# display the bill amount\n",
+    "print(\"The electricity bill for {} units is Rs. {:.2f}\".format(units, bill_amount))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f08f65c7-6d36-4f71-a9c3-abc251f47652",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "When the number of units consumed is 310, the bill amount should be calculated as follows:\n",
+    "\n",
+    "For the first 100 units, the user is charged Rs. 4.5 per unit, so the cost is 100 * 4.5 = Rs. 450.\n",
+    "For the next 100 units, the user is charged Rs. 6 per unit, so the cost is 100 * 6 = Rs. 600.\n",
+    "For the next 100 units, the user is charged Rs. 10 per unit, so the cost is 100 * 10 = Rs. 1000.\n",
+    "For the remaining 10 units, the user is charged Rs. 20 per unit, so the cost is 10 * 20 = Rs. 200.\n",
+    "Therefore, the total bill amount is Rs. 450 + Rs. 600 + Rs. 1000 + Rs. 200 = Rs. 2250. This matches the expected output given in the prompt.\n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e69fd9c7-5261-4ac8-8843-f34077bdc3f6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q.4Create a list of numbers from 1 to 100. Use for loop and while loop to calculate the cube of each\n",
+    "number and if the cube of that number is divisible by 4 or 5 then append that number in a list and print\n",
+    "that list."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "92def353-b07e-456c-a1ee-bdd89942e358",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Using a for loop to create a list of cubes of numbers from 1 to 100\n",
+    "cubes = []\n",
+    "for num in range(1, 101):\n",
+    "    cube = num ** 3\n",
+    "    cubes.append(cube)\n",
+    "\n",
+    "# Using a while loop to check if the cube of each number is divisible by 4 or 5\n",
+    "divisible_by_4_or_5 = []\n",
+    "i = 0\n",
+    "while i < len(cubes):\n",
+    "    if cubes[i] % 4 == 0 or cubes[i] % 5 == 0:\n",
+    "        divisible_by_4_or_5.append(cubes[i])\n",
+    "    i += 1\n",
+    "\n",
+    "# Printing the list of numbers whose cubes are divisible by 4 or 5\n",
+    "print(divisible_by_4_or_5)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "896cd8e1-0215-4722-9cd7-6953d0aeb15e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Q.5 Write a program to filter count vowels in the below-given string.\n",
+    "string = \"I want to become a data scientist\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7e5095cb-726a-45a2-88ee-4ffeae617f65",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "string = \"I want to become a data scientist\"\n",
+    "\n",
+    "# Define a function to check if a character is a vowel\n",
+    "def is_vowel(char):\n",
+    "    vowels = \"aeiouAEIOU\"\n",
+    "    if char in vowels:\n",
+    "        return True\n",
+    "    else:\n",
+    "        return False\n",
+    "\n",
+    "# Loop through the string and count the number of vowels\n",
+    "vowel_count = 0\n",
+    "for char in string:\n",
+    "    if is_vowel(char):\n",
+    "        vowel_count += 1\n",
+    "\n",
+    "# Print the number of vowels in the string\n",
+    "print(\"The number of vowels in the string is:\", vowel_count)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a0348c97-e9be-4b57-ae53-61a70ce70b9e",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
